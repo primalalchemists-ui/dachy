@@ -1,0 +1,82 @@
+[
+  {
+    "id": 1,
+    "before": "/images/realizations/before-01.webp",
+    "after": "/images/realizations/after-01.webp"
+  },
+  {
+    "id": 2,
+    "before": "/images/realizations/before-02.webp",
+    "after": "/images/realizations/after-02.webp"
+  },
+  {
+    "id": 3,
+    "before": "/images/realizations/before-03.webp",
+    "after": "/images/realizations/after-03.webp"
+  },
+  {
+    "id": 4,
+    "before": "/images/realizations/before-04.webp",
+    "after": "/images/realizations/after-04.webp"
+  },
+  {
+    "id": 5,
+    "before": "/images/realizations/before-05.webp",
+    "after": "/images/realizations/after-05.webp"
+  },
+  {
+    "id": 6,
+    "before": "/images/realizations/before-06.webp",
+    "after": "/images/realizations/after-06.webp"
+  },
+  {
+    "id": 7,
+    "before": "/images/realizations/before-07.webp",
+    "after": "/images/realizations/after-07.webp"
+  },
+  {
+    "id": 8,
+    "before": "/images/realizations/before-08.webp",
+    "after": "/images/realizations/after-08.webp"
+  },
+  {
+    "id": 9,
+    "before": "/images/realizations/before-09.webp",
+    "after": "/images/realizations/after-09.webp"
+  },
+  {
+    "id": 10,
+    "before": "/images/realizations/before-10.webp",
+    "after": "/images/realizations/after-10.webp"
+  },
+  {
+    "id": 11,
+    "before": "/images/realizations/before-11.webp",
+    "after": "/images/realizations/after-11.webp"
+  },
+  {
+    "id": 12,
+    "before": "/images/realizations/before-12.webp",
+    "after": "/images/realizations/after-12.webp"
+  },
+  {
+    "id": 13,
+    "before": "/images/realizations/before-13.webp",
+    "after": "/images/realizations/after-13.webp"
+  },
+  {
+    "id": 14,
+    "before": "/images/realizations/before-14.webp",
+    "after": "/images/realizations/after-14.webp"
+  },
+  {
+    "id": 15,
+    "before": "/images/realizations/before-15.webp",
+    "after": "/images/realizations/after-15.webp"
+  },
+  {
+    "id": 16,
+    "before": "/images/realizations/before-16.webp",
+    "after": "/images/realizations/after-16.webp"
+  }
+]

@@ -1,0 +1,117 @@
+@import "tailwindcss";
+
+@theme {
+  --color-primary: #2f8f1e;
+  --color-forest: #14532d;
+  --color-accent: #7ac943;
+  --color-canvas: #f7faf5;
+  --color-surface: #ffffff;
+  --color-surface-soft: #eef7ea;
+  --color-ink: #1f2937;
+  --color-ink-muted: #5b6470;
+  --color-line: #d9e6d5;
+  --color-night: #1e2a1e;
+  --color-star: #f2b01e;
+  --color-danger: #b42318;
+  --color-status-visit: #2563eb;
+  --color-status-quote: #d97706;
+
+  --container-page: 76rem;
+
+  --radius-control: 0.75rem;
+  --radius-card: 1.25rem;
+
+  --shadow-soft: 0 1px 2px rgb(20 83 45 / 0.04), 0 12px 32px -16px rgb(20 83 45 / 0.14);
+  --shadow-control: 0 1px 2px rgb(20 83 45 / 0.06), 0 6px 16px -6px rgb(20 83 45 / 0.18);
+  --shadow-cta: 0 1px 1px rgb(20 83 45 / 0.12), 0 10px 24px -12px rgb(20 83 45 / 0.55);
+  --shadow-modal: 0 2px 6px rgb(10 20 10 / 0.08), 0 32px 80px -24px rgb(10 20 10 / 0.45);
+
+  --animate-step-in: step-in 240ms ease-out;
+
+  @keyframes step-in {
+    from {
+      opacity: 0;
+      transform: translateY(6px);
+    }
+  }
+}
+
+@theme inline {
+  --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+}
+
+@utility text-display {
+  font-size: clamp(2.125rem, 1.6rem + 2.2vw, 3.5rem);
+  line-height: 1.08;
+  letter-spacing: -0.03em;
+  font-weight: 650;
+}
+
+@utility text-title {
+  font-size: clamp(1.75rem, 1.35rem + 1.6vw, 2.5rem);
+  line-height: 1.15;
+  letter-spacing: -0.025em;
+  font-weight: 650;
+}
+
+@utility text-lead {
+  font-size: clamp(1.0625rem, 0.98rem + 0.35vw, 1.25rem);
+  line-height: 1.6;
+}
+
+@utility text-eyebrow {
+  font-size: 0.8125rem;
+  line-height: 1.4;
+  letter-spacing: 0.12em;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+@utility text-question {
+  font-size: clamp(1.5rem, 1.3rem + 0.8vw, 1.875rem);
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+  font-weight: 650;
+}
+
+@utility section-y {
+  padding-block: clamp(4rem, 2.6rem + 5.6vw, 7.5rem);
+}
+
+@layer base {
+  :root {
+    --header-height: 4rem;
+
+    @media (width >= 40rem) {
+      --header-height: 5rem;
+    }
+  }
+
+  html {
+    -webkit-text-size-adjust: 100%;
+    /* Reserve the scrollbar space so locking scroll for the modal does not shift the page. */
+    scrollbar-gutter: stable;
+  }
+
+  html:has(dialog:modal) {
+    overflow: hidden;
+  }
+
+  button:not(:disabled),
+  [role="button"]:not([aria-disabled="true"]),
+  select:not(:disabled),
+  summary,
+  input:is([type="checkbox"], [type="radio"], [type="submit"], [type="button"]):not(:disabled) {
+    cursor: pointer;
+  }
+
+  body {
+    background-color: var(--color-canvas);
+    color: var(--color-ink);
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--focus-ring, var(--color-forest));
+    outline-offset: 3px;
+  }
+}
