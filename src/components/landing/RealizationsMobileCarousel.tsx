@@ -6,8 +6,18 @@ import type { Realization } from "@/data/realizations";
 import { BeforeAfterCard } from "./BeforeAfterCard";
 
 const VIEWPORT_ID = "realizacje-karuzela-mobile";
+const PAIRS_PER_SLIDE = 2;
+
+function toSlides(realizations: Realization[]) {
+  const slides: Realization[][] = [];
+  for (let index = 0; index < realizations.length; index += PAIRS_PER_SLIDE) {
+    slides.push(realizations.slice(index, index + PAIRS_PER_SLIDE));
+  }
+  return slides;
+}
 
 export function RealizationsMobileCarousel({ realizations }: { realizations: Realization[] }) {
+  const slides = toSlides(realizations);
   const { viewportRef, scrollTo, selectedIndex, regionProps } = useCarousel({
     autoplay: false,
     options: { align: "start", breakpoints: { "(min-width: 1024px)": { active: false } } },
@@ -17,26 +27,28 @@ export function RealizationsMobileCarousel({ realizations }: { realizations: Rea
     <div role="region" aria-roledescription="karuzela" aria-label="Realizacje przed i po" {...regionProps}>
       <div ref={viewportRef} id={VIEWPORT_ID} className="touch-pan-y overflow-hidden">
         <div className="-ml-3 flex">
-          {realizations.map((realization, index) => (
+          {slides.map((pairs, index) => (
             <div
-              key={realization.id}
+              key={pairs[0].id}
               role="group"
               aria-roledescription="slajd"
-              aria-label={`${index + 1} z ${realizations.length}`}
-              className="min-w-0 flex-none basis-full pl-3"
+              aria-label={`${index + 1} z ${slides.length}`}
+              className="min-w-0 flex-none basis-full space-y-3 pl-3"
             >
-              <BeforeAfterCard realization={realization} />
+              {pairs.map((realization) => (
+                <BeforeAfterCard key={realization.id} realization={realization} />
+              ))}
             </div>
           ))}
         </div>
       </div>
 
       <div className="mt-4 flex justify-center">
-        {realizations.map((realization, index) => (
+        {slides.map((pairs, index) => (
           <button
-            key={realization.id}
+            key={pairs[0].id}
             type="button"
-            aria-label={`Realizacja ${index + 1} z ${realizations.length}`}
+            aria-label={`Slajd ${index + 1} z ${slides.length}`}
             aria-current={index === selectedIndex ? "true" : undefined}
             aria-controls={VIEWPORT_ID}
             onClick={() => scrollTo(index)}
